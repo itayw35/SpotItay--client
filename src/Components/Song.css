@@ -1,0 +1,14 @@
+.song {
+  border: 1px solid black;
+  padding: 2px;
+  background-color: aliceblue;
+  color: rgba(128, 128, 128, 0.801);
+  width: 100%;
+}
+.remove-button {
+  border-radius: 20px;
+}
+.remove-button:hover {
+  cursor: pointer;
+  background-color: darkgray;
+}

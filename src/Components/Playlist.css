@@ -1,0 +1,11 @@
+.playlist {
+  border: #282c34 solid 2px;
+  padding: 2px;
+  /* margin: 2px; */
+  background-color: aliceblue;
+  height: 3%;
+}
+.playlist:hover {
+  cursor: pointer;
+  background-color: plum;
+}

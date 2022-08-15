@@ -1,0 +1,29 @@
+.search-input {
+  width: 30px;
+  height: 50px;
+  border-radius: 50%;
+  transition: width 500ms;
+}
+.search-input:hover {
+  width: 215px;
+  height: 50px;
+  border-radius: 30px;
+}
+#search-songs {
+  height: 0vh;
+  width: 30vw;
+  position: absolute;
+  top: 17vh;
+  left: 35vw;
+  background-color: cadetblue;
+  text-align: center;
+  line-height: 10vh;
+  overflow-y: scroll;
+  transition: 0.5s;
+  z-index: 1;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+.change {
+  height: 60vh !important;
+}

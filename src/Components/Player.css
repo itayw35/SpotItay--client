@@ -1,0 +1,13 @@
+.player {
+  height: 315px;
+  width: 560px;
+  position: fixed;
+  top: 10%;
+}
+.song-played {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 30vw;
+  top: 20vh;
+}

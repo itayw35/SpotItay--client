@@ -1,0 +1,15 @@
+.create-playlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-playlist-name {
+  width: 215px;
+  height: 50px;
+  border-radius: 30px;
+}
+.ok-button {
+  width: 6vw;
+  height: 4vh;
+  border-radius: 10px;
+}

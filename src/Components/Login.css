@@ -1,0 +1,61 @@
+.user-details {
+  height: 40px;
+  width: 215px;
+  border-radius: 30px;
+}
+
+.user-details:hover {
+  background-color: whitesmoke;
+}
+
+.submit-btn {
+  width: 215px;
+  border-radius: 30px;
+}
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: darkgray;
+}
+.login-register-state {
+  margin-top: 10%;
+  width: 40vw;
+}
+.login-btn {
+  width: 20vw;
+  height: 8vh;
+  background-color: gray;
+  cursor: pointer;
+}
+.register-btn {
+  width: 20vw;
+  height: 8vh;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+.login-box {
+  height: 80vh;
+  width: 40vw;
+  margin-top: 15vh;
+  margin-left: 30vw;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-form {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 40%;
+}
+.user-gender {
+  display: flex;
+}

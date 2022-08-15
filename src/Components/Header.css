@@ -1,0 +1,59 @@
+.header-container {
+  background-image: linear-gradient(to right, #ffecd2, #fdb8a1);
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 0px whitesmoke;
+  width: 100vw;
+}
+.header-inner-width {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hamburger {
+  height: 27px;
+  display: inline-block;
+  cursor: pointer;
+  width: 35px;
+}
+.change {
+  height: 27px;
+}
+#stripe1,
+#stripe2,
+#stripe3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.45s;
+}
+.change #stripe1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change #stripe2 {
+  opacity: 0;
+}
+.change #stripe3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+.disconnect-button {
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  background-color: white;
+}
+.disconnect-button:hover {
+  color: white;
+  background-color: blue;
+}
+.header-user-name {
+  display: flex;
+  align-items: center;
+}
