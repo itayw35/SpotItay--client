@@ -9,7 +9,7 @@
 }
 .header-inner-width {
   height: 100%;
-  width: 95%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,9 +19,12 @@
   display: inline-block;
   cursor: pointer;
   width: 35px;
+  position: fixed;
+  top: 20px;
+  right: 10px;
 }
 .change {
-  height: 27px;
+  height: 10px;
 }
 #stripe1,
 #stripe2,
@@ -45,7 +48,7 @@
 }
 .disconnect-button {
   position: fixed;
-  left: 50px;
+  left: 65px;
   top: 50px;
   background-color: white;
 }

@@ -31,7 +31,9 @@ export default function Header(props) {
             </button>
           ) : null}
 
-          <h2>SpotItay</h2>
+          <h2>
+            <i>SpotItay</i>
+          </h2>
           <div
             className={counter % 2 === 1 ? "change hamburger" : "hamburger"}
             onClick={openNav}
