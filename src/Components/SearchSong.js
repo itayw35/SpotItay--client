@@ -64,7 +64,6 @@ export default function SearchSong(props) {
     }
   }, [onePlaylist]);
   useEffect(() => {
-    console.log(playlist);
     if (list.length > 0) {
       const updatedPlaylist = list.findIndex((v) => {
         return v.name === currentPlaylist;
