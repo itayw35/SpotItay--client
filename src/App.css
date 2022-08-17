@@ -17,10 +17,11 @@
   color: #61dafb;
 }
 body {
-  background: url("https://tinyurl.com/mryz3h4s");
+  /* background: url("https://tinyurl.com/mryz3h4s");
   background-repeat: no-repeat;
   background-position: top;
-  background-size: cover;
+  background-size: cover; */
+  background-color: black;
   position: fixed;
 }
 @keyframes App-logo-spin {
@@ -40,4 +41,7 @@ input::-webkit-input-placeholder {
   color: black;
   background-color: azure;
   width: fit-content;
+}
+button:hover {
+  cursor: pointer;
 }

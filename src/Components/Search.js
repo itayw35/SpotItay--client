@@ -27,7 +27,7 @@ export default function Search(props) {
       <input
         type={"text"}
         className="search-input"
-        placeHolder="  🔎    Look For A song/singer"
+        placeHolder="    🔎    Look For A song/singer"
         onChange={(e) => {
           setInp(e.target.value);
           console.log(list);

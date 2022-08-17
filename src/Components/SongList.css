@@ -26,10 +26,11 @@
   background-color: darkgray;
 }
 .table {
-  /* position: fixed; */
+  position: fixed;
   overflow-y: scroll;
   height: 75vh;
   width: 300px;
+  top: 15vw;
 }
 
 td {

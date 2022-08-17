@@ -60,3 +60,6 @@
   display: flex;
   align-items: center;
 }
+.header-user-name svg:hover {
+  cursor: pointer;
+}

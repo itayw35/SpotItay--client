@@ -9,6 +9,9 @@
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #open-playlists {
