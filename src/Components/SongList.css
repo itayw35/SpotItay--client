@@ -32,7 +32,9 @@
   width: 300px;
   top: 15vw;
 }
-
+.table::-webkit-scrollbar {
+  display: none;
+}
 td {
   padding: 5px;
 }
