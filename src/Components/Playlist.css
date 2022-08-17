@@ -2,10 +2,12 @@
   border: #282c34 solid 2px;
   padding: 2px;
   /* margin: 2px; */
-  background-color: aliceblue;
+  background-color: lightblue;
   height: 3%;
+  text-align: center;
+  width: 100%;
 }
 .playlist:hover {
   cursor: pointer;
-  background-color: plum;
+  background-color: rgb(197, 117, 197);
 }

@@ -1,15 +1,23 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { useState, useEffect } from "react";
 import { PlaylistContext } from "../context/context";
 import Playlist from "./Playlist";
 import "./SearchSong.css";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 export default function SearchSong(props) {
   const [showPlaylists, setShowPlaylists] = useState(false);
   const { setPlaylist, playlist, num, currentPlaylist, baseURL } =
     useContext(PlaylistContext);
   const [list, setList] = useState([]);
   const [onePlaylist, setOnePlaylist] = useState([]);
+  const [rotate, setRotate] = useState(false);
+  const rotateIcon = function () {
+    setRotate(true);
+    setTimeout(() => {
+      setRotate(false);
+    }, 500);
+  };
   const addSong = (v) => {
     axios
       .put(
@@ -48,21 +56,15 @@ export default function SearchSong(props) {
       const existPlaylist = playlist.findIndex((val) => {
         return val.name === onePlaylist[0].name;
       });
-      // if (existPlaylist !== -1) {
       setPlaylist([
         ...playlist.slice(0, existPlaylist),
         { name: onePlaylist[0].name, songs: onePlaylist[0].songs },
         ...playlist.slice(existPlaylist + 1),
       ]);
-      // } else {
-      //   setPlaylist([
-      //     ...playlist,
-      //     { name: onePlaylist[0].name, songs: onePlaylist[0].songs },
-      //   ]);
-      // }
     }
   }, [onePlaylist]);
   useEffect(() => {
+    console.log(playlist);
     if (list.length > 0) {
       const updatedPlaylist = list.findIndex((v) => {
         return v.name === currentPlaylist;
@@ -81,27 +83,32 @@ export default function SearchSong(props) {
     }
   }, [list]);
 
-  useEffect(() => getSongs(), [num]);
+  useEffect(getSongs, []);
+  useEffect(() => getSongs(currentPlaylist), [num]);
   return (
     <div className="search-song" key={props.id}>
       <div>{props.title}</div>
-      <br />
-      <button
-        className="add-to-playlist-button"
-        onClick={() => {
-          setShowPlaylists(true);
-          // props.func(v);
-        }}
-      >
-        Add to PlayList
-      </button>
+      <div className="add-to-playlist-button">
+        <AiOutlinePlusCircle
+          style={rotate ? { rotate: 45 + "deg" } : { rotate: 0 + "deg" }}
+          onClick={() => {
+            setShowPlaylists(true);
+          }}
+        />
+      </div>
       {showPlaylists ? (
         <>
           {list.length > 0
             ? list.map((v) => {
                 return (
                   <>
-                    <Playlist func={() => addSong(v)} playlist={v.name} />
+                    <Playlist
+                      func={() => {
+                        addSong(v);
+                        rotateIcon();
+                      }}
+                      playlist={v.name}
+                    />
                   </>
                 );
               })

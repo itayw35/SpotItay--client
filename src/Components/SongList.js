@@ -23,11 +23,12 @@ export default function SongList(props) {
       })
       .then((res) => {
         console.log(res);
-        setNum((num) => num + 1);
+        setNum((prevNum) => prevNum + 1);
       })
       .catch((error) => console.log(error));
   };
   useEffect(() => {
+    console.log(playlist);
     const cup = playlist.findIndex((v) => {
       return v.name === currentPlaylist;
     });

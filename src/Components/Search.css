@@ -3,6 +3,8 @@
   height: 50px;
   border-radius: 50%;
   transition: width 500ms;
+  position: fixed;
+  left: 45vw;
 }
 .search-input:hover {
   width: 215px;
@@ -13,8 +15,8 @@
   height: 0vh;
   width: 30vw;
   position: absolute;
-  top: 17vh;
-  left: 35vw;
+  top: 18vh;
+  left: 38vw;
   background-color: cadetblue;
   text-align: center;
   line-height: 10vh;

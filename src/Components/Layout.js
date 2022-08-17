@@ -40,22 +40,24 @@ export default function Layout() {
         />
         {isLogged ? (
           <>
-            <Search func={setSongAdded} />
             <div className="main-flex">
               <SongList
                 songadd={songAdded}
                 setBinge={setBinge}
                 choose={setGetSong}
               />
-              {getSong || binge ? (
-                <Player
-                  className="player"
-                  song={getSong.song}
-                  singer={getSong.singer}
-                  id={getSong.id}
-                  binge={binge}
-                />
-              ) : null}
+              <div className="central-flex">
+                <Search func={setSongAdded} />
+                {getSong || binge ? (
+                  <Player
+                    className="player"
+                    song={getSong.song}
+                    singer={getSong.singer}
+                    id={getSong.id}
+                    binge={binge}
+                  />
+                ) : null}
+              </div>
               <Playlists
                 className="playlists"
                 id={counter % 2 === 1 ? "open-playlists" : ""}

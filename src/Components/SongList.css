@@ -30,7 +30,7 @@
   overflow-y: scroll;
   height: 75vh;
   width: 300px;
-  top: 15vw;
+  top: 10vw;
 }
 .table::-webkit-scrollbar {
   display: none;
@@ -40,7 +40,7 @@ td {
 }
 td:hover {
   cursor: pointer;
-  background-color: plum;
+  background-color: rgb(197, 117, 197);
 }
 .song-list-inner-height {
   height: 80%;
