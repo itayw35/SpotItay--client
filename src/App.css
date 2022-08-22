@@ -25,11 +25,7 @@ input,
 input::-webkit-input-placeholder {
   font-size: 100%;
 }
-.title {
-  color: black;
-  background-color: azure;
-  width: fit-content;
-}
+
 button:hover {
   cursor: pointer;
 }

@@ -10,9 +10,6 @@ export default function Player(props) {
   // });
   return (
     <div className="song-played">
-      <div className="title">
-        <b>{props.song} </b>
-      </div>
       <iframe
         className="player"
         // width="560"
