@@ -14,8 +14,9 @@ export default function Player(props) {
         <b>{props.song} </b>
       </div>
       <iframe
-        width="560"
-        height="315"
+        className="player"
+        // width="560"
+        // height="315"
         src={
           props.binge
             ? `https://www.youtube.com/embed/${props.id}?autoplay=1?muted=1&playlist=${props.binge}`

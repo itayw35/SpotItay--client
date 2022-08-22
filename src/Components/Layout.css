@@ -27,3 +27,17 @@
   align-items: center;
   justify-content: space-between;
 }
+.song-list-central-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 450px) {
+  .song-list-central-flex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #open-playlists {
+    width: 75px !important;
+  }
+}

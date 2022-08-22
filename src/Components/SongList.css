@@ -26,11 +26,9 @@
   background-color: darkgray;
 }
 .table {
-  position: fixed;
   overflow-y: scroll;
   height: 75vh;
-  width: 300px;
-  top: 10vw;
+  width: 25vw;
 }
 .table::-webkit-scrollbar {
   display: none;
@@ -50,10 +48,12 @@ td:hover {
   gap: 10px;
 }
 .playlist-name {
-  /* position: fixed;
-  left: 5%;
-  top: 10%; */
   color: blue;
   font-family: fantasy;
   font-size: large;
+}
+@media screen and(max-width:450px) {
+  .table {
+    width: 100px;
+  }
 }

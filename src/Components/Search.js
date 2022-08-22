@@ -25,7 +25,10 @@ export default function Search(props) {
   }, [inp]);
   const styles = {
     search: {
-      width: searchref?.current?.value !== "" ? 215 + "px" : null,
+      width:
+        searchref?.current?.value && searchref?.current?.value !== ""
+          ? 215 + "px"
+          : null,
       borderRadius: searchref?.current?.value !== "" ? 30 + "px" : null,
     },
   };

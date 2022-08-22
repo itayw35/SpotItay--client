@@ -41,22 +41,24 @@ export default function Layout() {
         {isLogged ? (
           <>
             <div className="main-flex">
-              <SongList
-                songadd={songAdded}
-                setBinge={setBinge}
-                choose={setGetSong}
-              />
-              <div className="central-flex">
-                <Search func={setSongAdded} />
-                {getSong || binge ? (
-                  <Player
-                    className="player"
-                    song={getSong.song}
-                    singer={getSong.singer}
-                    id={getSong.id}
-                    binge={binge}
-                  />
-                ) : null}
+              <div className="song-list-central-flex">
+                <SongList
+                  songadd={songAdded}
+                  setBinge={setBinge}
+                  choose={setGetSong}
+                />
+                <div className="central-flex">
+                  <Search func={setSongAdded} />
+                  {getSong || binge ? (
+                    <Player
+                      className="player"
+                      song={getSong.song}
+                      singer={getSong.singer}
+                      id={getSong.id}
+                      binge={binge}
+                    />
+                  ) : null}
+                </div>
               </div>
               <Playlists
                 className="playlists"

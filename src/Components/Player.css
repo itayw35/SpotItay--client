@@ -1,8 +1,6 @@
 .player {
   height: 315px;
   width: 560px;
-  position: fixed;
-  top: 10%;
 }
 .song-played {
   display: flex;
@@ -10,4 +8,10 @@
   position: fixed;
   left: 30vw;
   top: 20vh;
+}
+@media screen and (max-width: 450px) {
+  .player {
+    height: 100px;
+    width: 180px;
+  }
 }

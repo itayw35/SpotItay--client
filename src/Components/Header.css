@@ -63,3 +63,16 @@
 .header-user-name svg:hover {
   cursor: pointer;
 }
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 65px;
+  transform: rotate(40deg);
+}
+@media screen and (max-width: 450px) {
+  .header-inner-width {
+    justify-content: center;
+  }
+}

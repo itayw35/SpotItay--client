@@ -2,6 +2,7 @@ import { useState } from "react";
 import { icons } from "react-icons";
 import "./Header.css";
 import { IoIosArrowDropdown } from "react-icons/io";
+import logo from "../logo-removebg-preview.png";
 export default function Header(props) {
   const [counter, setCounter] = useState(0);
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
@@ -30,10 +31,12 @@ export default function Header(props) {
               Disconnect
             </button>
           ) : null}
-
-          <h2>
-            <i>SpotItay</i>
-          </h2>
+          <div className="logo">
+            <img src={logo}></img>
+            <h2>
+              <i>SpotItay</i>
+            </h2>
+          </div>
           <div
             className={counter % 2 === 1 ? "change hamburger" : "hamburger"}
             onClick={openNav}
