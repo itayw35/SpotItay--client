@@ -6,11 +6,9 @@ import "./Playlists.css";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 export default function Playlists(props) {
   const [isCreating, setIsCreating] = useState(false);
-  const [list, setList] = useState([]);
+  // const [list, setList] = useState([]);
   const [rotate, setRotate] = useState(false);
-
-  const { setPlaylist, playlist, setCurrentPlaylist, isLogged, baseURL } =
-    useContext(PlaylistContext);
+  const { isLogged, baseURL, getPlayLists, list } = useContext(PlaylistContext);
   const playlistName = useRef();
   const rotateIcon = function () {
     setRotate(true);
@@ -30,49 +28,32 @@ export default function Playlists(props) {
       )
       .then((res) => {
         console.log(res.data);
-        getPlayLIsts();
+        getPlayLists();
       })
       .catch((err) => console.log(err));
   };
-  const getPlayLIsts = function () {
-    axios
-      .get(`${baseURL}/playlist/get-playlists`, {
-        headers: { authorization: "bearer " + localStorage.token },
-      })
-      .then((res) => {
-        setList(res.data);
-        const playlists = res.data;
-        for (let i in playlists) {
-          playlist[i] = {
-            name: playlists[i].name,
-            songs: playlists[i].songs,
-          };
-        }
-      });
-  };
+  // const getPlayLists = function () {
+  //   axios
+  //     .get(`${baseURL}/playlist/get-playlists`, {
+  //       headers: { authorization: "bearer " + localStorage.token },
+  //     })
+  //     .then((res) => {
+  //       setList(res.data);
+  //       const playlists = res.data;
+  //       for (let i in playlists) {
+  //         playlist[i] = {
+  //           name: playlists[i].name,
+  //           songs: playlists[i].songs,
+  //         };
+  //       }
+  //     });
+  // };
   useEffect(() => {
     if (isLogged) {
-      getPlayLIsts();
+      getPlayLists();
     }
   }, []);
-  const loadPlaylist = (v) => {
-    console.log(playlist);
-    setCurrentPlaylist(v.name);
-    // const existPlaylist = playlist.findIndex((val) => {
-    //   return val.name === v.name;
-    // });
-    // if (existPlaylist !== -1) {
-    //   if (playlist[existPlaylist].songs.length <= v.songs.length) {
-    //     setPlaylist([
-    //       ...playlist.slice(0, existPlaylist),
-    //       { name: v.name, songs: v.songs },
-    //       ...playlist.slice(existPlaylist + 1),
-    //     ]);
-    //   }
-    // } else {
-    //   setPlaylist([...playlist, { name: v.name, songs: v.songs }]);
-    // }
-  };
+
   return (
     <div className={props.className} id={props.id}>
       {" "}
@@ -80,7 +61,7 @@ export default function Playlists(props) {
         ? list.map((v) => {
             return (
               <>
-                <Playlist func={() => loadPlaylist(v)} playlist={v.name} />
+                <Playlist func={() => props.func(v)} playlist={v.name} />
               </>
             );
           })
@@ -103,15 +84,23 @@ export default function Playlists(props) {
               placeholder="Enter Playlist Name"
               autoFocus
             ></input>
-            <button
-              className="ok-button"
-              onClick={() => {
-                makePlaylist();
-                rotateIcon();
-              }}
-            >
-              ok
-            </button>
+            <div className="buttons-flex">
+              <button
+                className="ok-button"
+                onClick={() => {
+                  makePlaylist();
+                  rotateIcon();
+                }}
+              >
+                ok
+              </button>
+              <button
+                className="ok-button"
+                onClick={() => setIsCreating(false)}
+              >
+                cancel
+              </button>
+            </div>
           </>
         ) : null}
       </div>

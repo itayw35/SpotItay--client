@@ -9,6 +9,7 @@ import { PlaylistContext } from "../context/context";
 import Login from "./Login";
 import Playlists from "./Playlists";
 import "./Layout.css";
+import axios from "axios";
 export default function Layout() {
   const [getSong, setGetSong] = useState("");
   const [songAdded, setSongAdded] = useState("");
@@ -18,7 +19,27 @@ export default function Layout() {
   const [currentPlaylist, setCurrentPlaylist] = useState();
   const [isLogged, setIsLogged] = useState(localStorage.token);
   const [num, setNum] = useState(0);
+  const [list, setList] = useState([]);
   const baseURL = "https://spotitay.herokuapp.com";
+  const loadPlaylist = (v) => {
+    setCurrentPlaylist(v.name);
+  };
+  const getPlayLists = function () {
+    axios
+      .get(`${baseURL}/playlist/get-playlists`, {
+        headers: { authorization: "bearer " + localStorage.token },
+      })
+      .then((res) => {
+        setList(res.data);
+        const playlists = res.data;
+        for (let i in playlists) {
+          playlist[i] = {
+            name: playlists[i].name,
+            songs: playlists[i].songs,
+          };
+        }
+      });
+  };
   return (
     <>
       <PlaylistContext.Provider
@@ -31,6 +52,8 @@ export default function Layout() {
           num,
           setNum,
           baseURL,
+          getPlayLists,
+          list,
         }}
       >
         <Header
@@ -63,6 +86,7 @@ export default function Layout() {
               <Playlists
                 className="playlists"
                 id={counter % 2 === 1 ? "open-playlists" : ""}
+                func={loadPlaylist}
               />
             </div>
           </>

@@ -32,6 +32,6 @@
 }
 @media screen and (max-width: 450px) {
   #open-playlists {
-    width: 75px !important;
+    width: 150px !important;
   }
 }

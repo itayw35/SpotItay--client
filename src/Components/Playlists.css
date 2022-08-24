@@ -22,7 +22,12 @@
   border-radius: 30px;
 }
 .ok-button {
-  width: 6vw;
+  width: 14vw;
   height: 4vh;
   border-radius: 10px;
+}
+.buttons-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }

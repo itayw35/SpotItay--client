@@ -29,3 +29,8 @@
 .change {
   height: 60vh !important;
 }
+@media screen and (max-width: 450px) {
+  #search-songs {
+    width: 200px;
+  }
+}

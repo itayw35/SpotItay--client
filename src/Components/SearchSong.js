@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useRef } from "react";
 import { useState, useEffect } from "react";
 import { PlaylistContext } from "../context/context";
-import Playlist from "./Playlist";
+import Playlists from "./Playlists";
 import "./SearchSong.css";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 export default function SearchSong(props) {
@@ -34,6 +34,7 @@ export default function SearchSong(props) {
         console.log(res);
         getSongs(v.name);
       });
+    rotateIcon();
   };
   const getSongs = (playlist) => {
     playlist
@@ -91,29 +92,30 @@ export default function SearchSong(props) {
         <AiOutlinePlusCircle
           style={rotate ? { rotate: 45 + "deg" } : { rotate: 0 + "deg" }}
           onClick={() => {
-            setShowPlaylists(true);
+            setShowPlaylists(!showPlaylists);
           }}
         />
       </div>
       {showPlaylists ? (
-        <>
-          {list.length > 0
-            ? list.map((v) => {
-                return (
-                  <>
-                    <Playlist
-                      func={() => {
-                        addSong(v);
-                        rotateIcon();
-                      }}
-                      playlist={v.name}
-                    />
-                  </>
-                );
-              })
-            : null}
-        </>
-      ) : null}
+        <Playlists className="search-song-playlists" func={addSong} />
+      ) : //  <>
+      //     {list.length > 0
+      //       ? list.map((v) => {
+      //           return (
+      //             <>
+      //               <Playlist
+      //                 func={() => {
+      //                   addSong(v);
+      //                   rotateIcon();
+      //                 }}
+      //                 playlist={v.name}
+      //               />
+      //             </>
+      //           );
+      //         })
+      //       : null}
+      //   </>
+      null}
     </div>
   );
 }

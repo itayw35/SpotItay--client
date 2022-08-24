@@ -1,6 +1,6 @@
 .user-details {
   height: 40px;
-  width: 215px;
+  width: 70%;
   border-radius: 30px;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .submit-btn {
-  width: 215px;
+  width: 70%;
   border-radius: 30px;
 }
 .submit-btn:hover {
@@ -18,32 +18,35 @@
 }
 .login-register-state {
   margin-top: 10%;
-  width: 40vw;
+  width: 100%;
 }
-.login-btn {
-  width: 20vw;
+#login-btn {
+  width: 175px;
   height: 8vh;
   background-color: gray;
   cursor: pointer;
 }
-.register-btn {
-  width: 20vw;
+#register-btn {
+  width: 175px;
   height: 8vh;
   background-color: aliceblue;
   cursor: pointer;
 }
-.login-box {
+#login-box {
   height: 80vh;
-  width: 40vw;
-  margin-top: 15vh;
-  margin-left: 30vw;
+  width: 350px;
+  margin-top: 8vh;
+  margin-left: 500px;
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px plum;
 }
 .login-form {
   height: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,7 +58,18 @@
   justify-content: space-between;
   align-items: center;
   height: 40%;
+  width: 100%;
 }
 .user-gender {
   display: flex;
+}
+@media screen and (max-width: 450px) {
+  #login-box {
+    width: 200px;
+    margin-left: 75px;
+  }
+  #register-btn,
+  #login-btn {
+    width: 100px;
+  }
 }

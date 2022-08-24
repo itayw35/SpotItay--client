@@ -45,7 +45,7 @@ export default function Login(props) {
     //conditional request - login/register
   };
   return (
-    <div className="login-box">
+    <div id="login-box">
       <form className="login-form" onSubmit={(e) => login(e)}>
         {!isLogin ? (
           <div className="register-form">
@@ -86,17 +86,13 @@ export default function Login(props) {
         <input className="submit-btn" type={"submit"}></input>
       </form>
       <div className="login-register-state">
-        <button
-          ref={loginRef}
-          onClick={() => makeLogin()}
-          className="login-btn"
-        >
+        <button ref={loginRef} onClick={() => makeLogin()} id="login-btn">
           Sign-in
         </button>
         <button
           ref={registerRef}
           onClick={() => makeRegister()}
-          className="register-btn"
+          id="register-btn"
         >
           Sign-up
         </button>

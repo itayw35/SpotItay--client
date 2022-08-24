@@ -39,7 +39,7 @@ export default function Search(props) {
         type={"text"}
         className="search-input"
         style={styles.search}
-        placeHolder="    🔎    Look For A song/singer"
+        placeHolder="    🔎    Look For Songs"
         onChange={(e) => {
           setInp(e.target.value);
           console.log(list);
