@@ -18,7 +18,7 @@ export default function SearchSong(props) {
       setRotate(false);
     }, 500);
   };
-  const addSong = (v) => {
+  const addSong = (e, v) => {
     axios
       .put(
         `${baseURL}/playlist/add-song`,
@@ -98,24 +98,7 @@ export default function SearchSong(props) {
       </div>
       {showPlaylists ? (
         <Playlists className="search-song-playlists" func={addSong} />
-      ) : //  <>
-      //     {list.length > 0
-      //       ? list.map((v) => {
-      //           return (
-      //             <>
-      //               <Playlist
-      //                 func={() => {
-      //                   addSong(v);
-      //                   rotateIcon();
-      //                 }}
-      //                 playlist={v.name}
-      //               />
-      //             </>
-      //           );
-      //         })
-      //       : null}
-      //   </>
-      null}
+      ) : null}
     </div>
   );
 }

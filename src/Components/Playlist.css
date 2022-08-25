@@ -6,8 +6,16 @@
   height: 3%;
   text-align: center;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 .playlist:hover {
   cursor: pointer;
   background-color: rgb(197, 117, 197);
+}
+.share-name {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  z-index: 1;
 }

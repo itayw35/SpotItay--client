@@ -21,7 +21,7 @@ export default function Layout() {
   const [num, setNum] = useState(0);
   const [list, setList] = useState([]);
   const baseURL = "https://spotitay.herokuapp.com";
-  const loadPlaylist = (v) => {
+  const loadPlaylist = (e, v) => {
     setCurrentPlaylist(v.name);
   };
   const getPlayLists = function () {

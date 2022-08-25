@@ -6,7 +6,6 @@ import "./Playlists.css";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 export default function Playlists(props) {
   const [isCreating, setIsCreating] = useState(false);
-  // const [list, setList] = useState([]);
   const [rotate, setRotate] = useState(false);
   const { isLogged, baseURL, getPlayLists, list } = useContext(PlaylistContext);
   const playlistName = useRef();
@@ -32,22 +31,34 @@ export default function Playlists(props) {
       })
       .catch((err) => console.log(err));
   };
-  // const getPlayLists = function () {
-  //   axios
-  //     .get(`${baseURL}/playlist/get-playlists`, {
-  //       headers: { authorization: "bearer " + localStorage.token },
-  //     })
-  //     .then((res) => {
-  //       setList(res.data);
-  //       const playlists = res.data;
-  //       for (let i in playlists) {
-  //         playlist[i] = {
-  //           name: playlists[i].name,
-  //           songs: playlists[i].songs,
-  //         };
-  //       }
-  //     });
-  // };
+  const removePlaylist = function (e, playlist) {
+    e.stopPropagation();
+    axios
+      .put(
+        `${baseURL}/playlist/remove-playlist`,
+        { name: playlist },
+        { headers: { authorization: "bearer " + localStorage.token } }
+      )
+      .then((res) => {
+        console.log(res.data);
+        getPlayLists();
+      })
+      .catch((err) => console.log(err));
+  };
+  const sharePlaylist = function (playlist, friend) {
+    console.log(friend);
+    axios
+      .post(
+        `${baseURL}/playlist/share-playlist`,
+        {
+          playlist: playlist,
+          email: friend,
+        },
+        { headers: { authorization: "bearer " + localStorage.token } }
+      )
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  };
   useEffect(() => {
     if (isLogged) {
       getPlayLists();
@@ -61,7 +72,16 @@ export default function Playlists(props) {
         ? list.map((v) => {
             return (
               <>
-                <Playlist func={() => props.func(v)} playlist={v.name} />
+                <Playlist
+                  func={(e) => props.func(e, v)}
+                  playlist={v.name}
+                  remove={(e) => {
+                    removePlaylist(e, v.name);
+                  }}
+                  share={(friend) => {
+                    sharePlaylist(v.name, friend);
+                  }}
+                />
               </>
             );
           })

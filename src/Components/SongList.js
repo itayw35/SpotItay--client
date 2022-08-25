@@ -34,17 +34,6 @@ export default function SongList(props) {
     });
     setSongList(playlist[cup]?.songs);
   }, [playlist, currentPlaylist]);
-  // const addSong = function (name, id) {
-  //   setSongList([...songList, { songName: name, id: id }]);
-  //   // const newSongList = [...songList];
-  //   // newSongList.push({ songName: name, id: id });
-  //   // setSongList(newSongList);
-  // };
-  // useEffect(() => {
-  //   if (props.songadd.title) {
-  //     addSong(props.songadd.title, props.songadd.id);
-  //   }
-  // }, [props.songadd]);
   useEffect(() => {
     props.choose(getSong);
   }, [getSong]);
