@@ -3,7 +3,7 @@
   padding: 2px;
   /* margin: 2px; */
   background-color: lightblue;
-  height: 3%;
+  height: fit-content;
   text-align: center;
   width: 100%;
   display: flex;

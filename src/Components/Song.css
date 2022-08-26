@@ -7,6 +7,7 @@
 }
 .remove-button {
   border-radius: 20px;
+  height: 21.5px;
 }
 .remove-button:hover {
   cursor: pointer;
