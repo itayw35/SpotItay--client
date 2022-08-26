@@ -3,7 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { PlaylistContext } from "../context/context";
 import "./SongList.css";
 import axios from "axios";
-
+import { FaRegPlayCircle } from "react-icons/fa";
+import { BsShuffle } from "react-icons/bs";
 export default function SongList(props) {
   const [getSong, setGetSong] = useState("");
   const { playlist, currentPlaylist, setNum, baseURL } =
@@ -46,14 +47,39 @@ export default function SongList(props) {
     props.setBinge(allSongs);
     props.choose(songList[0]);
   };
+  const makeShuffle = function () {
+    let shuffledArr = songList.map((v) => {
+        return v.id;
+      }),
+      song = "",
+      i = 0,
+      i2 = 0;
+    for (let n in songList) {
+      i = Math.round(Math.random() * (songList.length - 1));
+      i2 = Math.round(Math.random() * (songList.length - 1));
+      song = shuffledArr[i2];
+      shuffledArr[i2] = shuffledArr.splice(i, 1, song).toString();
+    }
+    console.log(shuffledArr);
+    const allSongs = shuffledArr.join(",");
+    props.setBinge(allSongs);
+    props.choose(allSongs[0]);
+  };
   return (
     <div className="song-list-container">
       <div className="song-list-inner-height">
         <div className="song-list-title">
           <span className="playlist-name">{currentPlaylist}</span>
-          <button onClick={makeBinge} className="binge">
-            Binge
-          </button>
+          <div onClick={makeBinge} className="binge">
+            <abbr title="Play">
+              <FaRegPlayCircle />
+            </abbr>
+          </div>
+          <div onClick={makeShuffle} className="binge">
+            <abbr title="Shuffle">
+              <BsShuffle />
+            </abbr>
+          </div>
         </div>
         <div className="table">
           {songList

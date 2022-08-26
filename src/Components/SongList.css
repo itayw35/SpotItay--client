@@ -11,17 +11,18 @@
   justify-content: first baseline;
   margin-left: 10px;
 }
-.binge {
+.binge svg {
   /* position: fixed; */
   /* top: 3%; */
   /* left: 5%; */
   border-radius: 50%;
   background-color: whitesmoke;
   padding: 5px;
-  height: 45px;
-  width: 45px;
+  /* height: 25px;
+  width: 25px; */
+  font-size: 1rem;
 }
-.binge:hover {
+.binge svg:hover {
   cursor: pointer;
   background-color: darkgray;
 }
