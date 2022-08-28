@@ -16,11 +16,12 @@ export default function Player(props) {
         // height="315"
         src={
           props.binge
-            ? `https://www.youtube.com/embed/${props.id}?autoplay=1?muted=1&playlist=${props.binge}`
-            : `https://www.youtube.com/embed/${props.id}?autoplay=1?muted=1`
+            ? `https://www.youtube.com/embed/${props.id}?autoplay=1&playlist=${props.binge}`
+            : `https://www.youtube.com/embed/${props.id}?autoplay=1`
         }
         title="YouTube video player"
-        frameborder="0"
+        frameBorder={0}
+        allow="autoplay"
       ></iframe>
       {/* <video ref={videoRef} src={video} onEnded={shuffle}></video> */}
     </div>
