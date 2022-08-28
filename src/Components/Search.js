@@ -60,6 +60,9 @@ export default function Search(props) {
               setIsSearch(false);
             }
           }}
+          onBlur={() => {
+            if (isSearch) setIsSearch(false);
+          }}
         >
           {" "}
           {list.map((v) => {
