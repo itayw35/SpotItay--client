@@ -44,7 +44,7 @@ export default function SongList(props) {
         return v.id;
       })
       .join(",");
-      console.log(allSongs);
+    console.log(allSongs);
     props.setBinge(allSongs);
     props.choose(songList[0]);
   };
