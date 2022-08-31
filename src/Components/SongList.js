@@ -65,7 +65,7 @@ export default function SongList(props) {
     const allSongs = shuffledArr.join(",");
     console.log(allSongs);
     props.setBinge(allSongs);
-    props.choose(allSongs[0]);
+    props.choose(shuffledArr[0]);
   };
   return (
     <div className="song-list-container">
