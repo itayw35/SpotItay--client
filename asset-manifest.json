@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/SpotItay--client/static/css/main.9bf3a04f.css",
+    "main.js": "/SpotItay--client/static/js/main.892b6857.js",
+    "static/js/787.2b08a87a.chunk.js": "/SpotItay--client/static/js/787.2b08a87a.chunk.js",
+    "static/media/logo-removebg-preview.png": "/SpotItay--client/static/media/logo-removebg-preview.36c76b8c2467e7cb040e.png",
+    "index.html": "/SpotItay--client/index.html",
+    "main.9bf3a04f.css.map": "/SpotItay--client/static/css/main.9bf3a04f.css.map",
+    "main.892b6857.js.map": "/SpotItay--client/static/js/main.892b6857.js.map",
+    "787.2b08a87a.chunk.js.map": "/SpotItay--client/static/js/787.2b08a87a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bf3a04f.css",
+    "static/js/main.892b6857.js"
+  ]
+}
