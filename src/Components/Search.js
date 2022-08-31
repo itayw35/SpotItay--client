@@ -23,6 +23,7 @@ export default function Search(props) {
         });
     }
   }, [inp]);
+
   const styles = {
     search: {
       width:
