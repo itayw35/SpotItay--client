@@ -44,6 +44,7 @@ export default function SongList(props) {
         return v.id;
       })
       .join(",");
+      console.log(allSongs);
     props.setBinge(allSongs);
     props.choose(songList[0]);
   };
@@ -62,6 +63,7 @@ export default function SongList(props) {
     }
     console.log(shuffledArr);
     const allSongs = shuffledArr.join(",");
+    console.log(allSongs);
     props.setBinge(allSongs);
     props.choose(allSongs[0]);
   };
