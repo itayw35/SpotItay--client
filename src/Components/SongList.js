@@ -44,9 +44,7 @@ export default function SongList(props) {
         return v.id;
       })
       .join(",");
-    console.log(allSongs);
     props.setBinge(allSongs);
-    props.choose(songList[0]);
   };
   const makeShuffle = function () {
     let shuffledArr = songList.map((v) => {
@@ -61,11 +59,8 @@ export default function SongList(props) {
       song = shuffledArr[i2];
       shuffledArr[i2] = shuffledArr.splice(i, 1, song).toString();
     }
-    console.log(shuffledArr);
     const allSongs = shuffledArr.join(",");
-    console.log(allSongs);
     props.setBinge(allSongs);
-    props.choose(shuffledArr[0]);
   };
   return (
     <div className="song-list-container">

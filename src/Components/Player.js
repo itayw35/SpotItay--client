@@ -6,7 +6,7 @@ export default function Player(props) {
         className="player"
         src={
           props.binge
-            ? `https://www.youtube.com/embed/${props.id}?autoplay=1&playlist=${props.binge}`
+            ? `https://www.youtube.com/embed?autoplay=1&playlist=${props.binge}`
             : `https://www.youtube.com/embed/${props.id}?autoplay=1`
         }
         title="YouTube video player"
