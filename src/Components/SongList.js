@@ -6,7 +6,7 @@ import axios from "axios";
 import { FaRegPlayCircle } from "react-icons/fa";
 import { BsShuffle } from "react-icons/bs";
 export default function SongList(props) {
-  const [getSong, setGetSong] = useState("");
+  const [getSong, setGetSong] = useState({});
   const { playlist, currentPlaylist, setNum, baseURL } =
     useContext(PlaylistContext);
   const [songList, setSongList] = useState([]);
@@ -37,6 +37,7 @@ export default function SongList(props) {
   }, [playlist, currentPlaylist]);
   useEffect(() => {
     props.choose(getSong);
+    props.setBinge(undefined)
   }, [getSong]);
   const makeBinge = () => {
     const allSongs = songList
