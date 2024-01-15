@@ -6,7 +6,7 @@ import axios from "axios";
 import { FaRegPlayCircle } from "react-icons/fa";
 import { BsShuffle } from "react-icons/bs";
 export default function SongList(props) {
-  const [getSong, setGetSong] = useState({});
+  const [getSong, setGetSong] = useState("");
   const { playlist, currentPlaylist, setNum, baseURL } =
     useContext(PlaylistContext);
   const [songList, setSongList] = useState([]);
@@ -37,7 +37,8 @@ export default function SongList(props) {
   }, [playlist, currentPlaylist]);
   useEffect(() => {
     props.choose(getSong);
-    props.setBinge(undefined)
+    props.setBinge(undefined);
+    props.setShuffle(undefined);
   }, [getSong]);
   const makeBinge = () => {
     const allSongs = songList
@@ -46,6 +47,7 @@ export default function SongList(props) {
       })
       .join(",");
     props.setBinge(allSongs);
+    props.setShuffle(undefined);
   };
   const makeShuffle = function () {
     let shuffledArr = songList.map((v) => {
@@ -61,7 +63,8 @@ export default function SongList(props) {
       shuffledArr[i2] = shuffledArr.splice(i, 1, song).toString();
     }
     const allSongs = shuffledArr.join(",");
-    props.setBinge(allSongs);
+    props.setBinge(undefined);
+    props.setShuffle(shuffledArr);
   };
   return (
     <div className="song-list-container">

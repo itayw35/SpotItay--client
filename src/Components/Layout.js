@@ -14,6 +14,7 @@ export default function Layout() {
   const [getSong, setGetSong] = useState("");
   const [songAdded, setSongAdded] = useState("");
   const [binge, setBinge] = useState();
+  const [shuffle, setShuffle] = useState([]);
   const [counter, setCounter] = useState(0);
   const [playlist, setPlaylist] = useState([]);
   const [currentPlaylist, setCurrentPlaylist] = useState();
@@ -40,6 +41,7 @@ export default function Layout() {
         }
       });
   };
+
   return (
     <>
       <PlaylistContext.Provider
@@ -69,16 +71,16 @@ export default function Layout() {
                   songadd={songAdded}
                   setBinge={setBinge}
                   choose={setGetSong}
+                  setShuffle={setShuffle}
                 />
                 <div className="central-flex">
                   <Search func={setSongAdded} />
                   {getSong || binge ? (
                     <Player
                       className="player"
-                      song={getSong.song}
-                      singer={getSong.singer}
-                      id={getSong.id}
+                      id={getSong}
                       binge={binge}
+                      shuffle={shuffle}
                     />
                   ) : null}
                 </div>
